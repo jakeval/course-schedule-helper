@@ -1,0 +1,49 @@
+<div class="form-popup" id="slot_form{{ slot_form_id }}">
+  <span class="popup-form">
+    <div class="form-container">
+        <h1>Option List</h1>
+        <div class="list-group">
+            <a href="#" class="list-group-item">First item</a>
+            <a href="#" class="list-group-item">Second item</a>
+            <a href="#" class="list-group-item">Third item</a>
+        </div>
+    </div>
+  </span>
+  <span class="popup-form">
+      <form action="/action_page.php" class="form-container">
+        <h1>Add options to your slot</h1>
+    
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Enter title" name="title" required>
+
+        <label for="courseNum"><b>Course Number</b></label>
+        <input type="text" placeholder="Enter Course Number" name="courseNum" required>
+        
+        <div class="weekDays-selector">
+            <input type="checkbox" id="weekday-mon" class="weekday" />
+            <label for="weekday-mon">M</label>
+            <input type="checkbox" id="weekday-tue" class="weekday" />
+            <label for="weekday-tue">T</label>
+            <input type="checkbox" id="weekday-wed" class="weekday" />
+            <label for="weekday-wed">W</label>
+            <input type="checkbox" id="weekday-thu" class="weekday" />
+            <label for="weekday-thu">T</label>
+            <input type="checkbox" id="weekday-fri" class="weekday" />
+            <label for="weekday-fri">F</label>
+            <input type="checkbox" id="weekday-sat" class="weekday" />
+            <label for="weekday-sat">S</label>
+            <input type="checkbox" id="weekday-sun" class="weekday" />
+            <label for="weekday-sun">S</label>
+        </div>
+
+        
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+  </span>
+</div>
+</li>

@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="index.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,64 +13,19 @@
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script src="index.js"></script>
+{% load static %}
+<script src="{% static 'scripts/index.js' %}"></script>
+  
 
+<div id="meta"
+  add_slot_url="{% url 'add_slot' %}"
+  render_slot_form_url="{% url 'render_slot_form' %}"
+></div>
 
 <body class="w3-content" style="max-width:1300px">
 
-
-        <div class="form-popup" id="myForm">
-            <span class="popup-form">
-              <div class="form-container">
-                  <h1>Option List</h1>
-                  <div class="list-group">
-                      <a href="#" class="list-group-item">First item</a>
-                      <a href="#" class="list-group-item">Second item</a>
-                      <a href="#" class="list-group-item">Third item</a>
-                  </div>
-              </div>
-            </span>
-            <span class="popup-form">
-                <form action="/action_page.php" class="form-container">
-                  <h1>Add options to your slot</h1>
-              
-                  <label for="title"><b>Title</b></label>
-                  <input type="text" placeholder="Enter title" name="title" required>
-
-                  <label for="courseNum"><b>Course Number</b></label>
-                  <input type="text" placeholder="Enter Course Number" name="courseNum" required>
-                  
-                  <div class="weekDays-selector">
-                      <input type="checkbox" id="weekday-mon" class="weekday" />
-                      <label for="weekday-mon">M</label>
-                      <input type="checkbox" id="weekday-tue" class="weekday" />
-                      <label for="weekday-tue">T</label>
-                      <input type="checkbox" id="weekday-wed" class="weekday" />
-                      <label for="weekday-wed">W</label>
-                      <input type="checkbox" id="weekday-thu" class="weekday" />
-                      <label for="weekday-thu">T</label>
-                      <input type="checkbox" id="weekday-fri" class="weekday" />
-                      <label for="weekday-fri">F</label>
-                      <input type="checkbox" id="weekday-sat" class="weekday" />
-                      <label for="weekday-sat">S</label>
-                      <input type="checkbox" id="weekday-sun" class="weekday" />
-                      <label for="weekday-sun">S</label>
-                  </div>
-
-                  
-
-                  <label for="psw"><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw" required>
-              
-                  <button type="submit" class="btn">Login</button>
-                  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                </form>
-            </span>
-        </div>
-
-
-        
-
+<ul id="slot_form_list">
+</ul>
 
 <!-- First Grid: Logo & About -->
 <div class="w3-row">
@@ -104,31 +60,13 @@
       <h2>My Slots</h2>
       <p>Some of my latest projects.</p>
     </div>
-    <div class="w3-row">
-      <div class="w3-half slot" onclick="openForm()">
-        <p>test</p>
-      </div>
-      <div class="w3-half">
-        <img src="w3images/workbench.jpg" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-row w3-hide-small">
-      <div class="w3-half">
-        <img src="w3images/workbench.jpg" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="w3images/coffee.jpg" style="width:100%">
+    <div>
+      <ul id="slot_list">
+      </ul>
+      <div>
+        <button id="add_slot">Add class slot</button>
       </div>
     </div>
-    <div class="w3-row w3-hide-small">
-      <div class="w3-half">
-        <img src="w3images/sound.jpg" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="w3images/workbench.jpg" style="width:100%">
-      </div>
-    </div><br>
-    <p>more</p>
   </div>
 
   <div class="w3-half w3-indigo w3-container" style="min-height:700px">
