@@ -36,7 +36,7 @@ $(document).ready(function() {
 		
 	});
 
-	/*
+
 	$(document).on('click', '.slot', function () {
 		//get slot_form_id from li element
 		//add form li element to ul
@@ -54,8 +54,8 @@ $(document).ready(function() {
 
 		document.getElementById("myForm").style.display = "block";
 	});
-	*/
 	
+
     $(".slot").hover(function (e) {
         $(this).html('<p>EDIT</p>');
     }, function (e) {
