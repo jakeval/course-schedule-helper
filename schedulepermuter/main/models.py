@@ -19,6 +19,9 @@ class Course(models.Model):
 	number = models.CharField(max_length=8)
 	title = models.CharField(max_length=32)
 
+	def __str__(self):
+		return "{0} {1}: {2}".format(self.department.code, self.number, self.title)
+
 class Professor(models.Model):
 	name = models.CharField(max_length=64)
 	institution = models.ForeignKey(Institution, on_delete=models.CASCADE)
@@ -38,3 +41,12 @@ class Section(models.Model):
 	start_time = models.TimeField()
 	end_time = models.TimeField()
 	professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+
+class Slot(models.Model):
+	slot_id = models.IntegerField()
+	sections = models.ManyToManyField(Section, blank=True, null=True)
+	TYPES = (
+		('M', 'Main'),
+		('A', 'Additional'))
+	section_type = models.CharField(max_length=1, choices=TYPES)
+	parent_section = models.ForeignKey(Course, on_delete=models.CASCADE, blank=True, null=True)
